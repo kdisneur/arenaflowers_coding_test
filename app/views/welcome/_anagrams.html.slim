@@ -1,0 +1,31 @@
+section ng-controller="AnagramsCtrl"
+  div class="panel m-anagrams"
+    h2 Find an anagram
+    form ng-submit="doSearch()"
+      div class="medium-6 columns"
+        select ng-model="dictionary" ng-options="dictionary.name for dictionary in dictionaries" required=""
+      div class="medium-6 columns"
+        div class="row collapse"
+          div class="small-10 columns"
+            input type="text" placeholder="Enter a word" ng-model="word" required=""
+          div class="small-2 columns"
+            input type="submit" class="button postfix" value="Search"
+
+
+  div class="row" data-equalizer="" ng-show="searches.length > 0"
+    h2 Anagram search history
+    div class="large-6 columns" data-equalizer-watch="" ng-repeat="search in searches"
+      div class="panel"
+        div class="row"
+          div class="medium-2 medium-push-10 columns"
+            span class="success label right" {{ search.elapsed_time }}s
+          div class="medium-10 medium-pull-2 columns"
+            h3
+              | {{ search.word }}
+        div class="row"
+          div ng-if="search.results.length > 0"
+            p Anagrams found :
+            span
+              | {{ search.results | sentencify }}
+          div ng-if="search.results.length == 0"
+            p No anagrams found :(

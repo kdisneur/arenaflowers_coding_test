@@ -1,0 +1,22 @@
+div ng-controller="DictionariesCtrl"
+  div ng-show="import_on_going"
+    div class="alert-box warning"
+      | An import is on going, you can't upload another dictionary in the same time... please wait...
+
+  div ng-show="!import_on_going"
+    form ng-upload="importDictionary(content)" upload-options-enable-rails-csrf="" action="/api/dictionaries"
+      fieldset
+        legend Import a new dictionary
+
+        div class="alert-box alert alex" ng-show="errors"
+          ul
+            li ng-repeat="error in errors"
+              | {{ error }}
+
+        div class="medium-6 columns"
+          input type="text" placeholder="Dictionary name" ng-model="name" name="dictionary[name]" required=""
+        div class="medium-6 columns"
+          label
+            | File should be a txt (one word by line)
+            input type="file" name="dictionary[file]" required=""
+        input type="submit" class="button right" value="Import" ng-disabled="$isLoading"
