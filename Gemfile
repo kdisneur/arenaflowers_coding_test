@@ -1,0 +1,18 @@
+source 'https://rubygems.org'
+source 'https://rails-assets.org'
+
+gem 'rails', '~> 4.1.4'
+
+gem 'carrierwave',      '~> 0.10.0'
+gem 'decent_exposure',  '~> 2.3.2'
+gem 'foundation-rails', '~> 5.3.0'
+gem 'jquery-rails',     '~> 3.1.1'
+gem 'slim',             '~> 2.0.3'
+gem 'rabl',             '~> 0.10.1'
+gem 'rake',             '~> 10.3.2'
+gem 'sqlite3',          '~> 1.3.9'
+gem 'spring',           '~> 1.1.3'
+gem 'state_machine',    '~> 1.2.0'
+gem 'sucker_punch',     '~> 1.1'
+gem 'therubyracer',     '~> 0.12.1'
+gem 'turbolinks',       '~> 2.2.2'
