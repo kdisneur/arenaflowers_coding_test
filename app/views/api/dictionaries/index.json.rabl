@@ -1,2 +1,2 @@
 collection imported_dictionaries
-attribute :name, :id
+attribute :name, :id, :elapsed_time

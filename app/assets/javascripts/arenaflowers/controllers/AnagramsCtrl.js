@@ -6,4 +6,8 @@ arenaflowers.controller('AnagramsCtrl', ['$scope', 'AnagramService', 'Dictionary
     $scope.searches.push(AnagramService.get({ dictionary_id: $scope.dictionary.id, id: $scope.word }));
     $scope.word = '';
   };
+
+  $scope.$on('new-dictionary-imported', function() {
+    $scope.dictionaries = DictionaryService.query();
+  });
 }]);

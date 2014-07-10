@@ -3,7 +3,7 @@ section ng-controller="AnagramsCtrl"
     h2 Find an anagram
     form ng-submit="doSearch()"
       div class="medium-6 columns"
-        select ng-model="dictionary" ng-options="dictionary.name for dictionary in dictionaries" required=""
+        select ng-model="dictionary" ng-options="(dictionary.name + ' (imported in ' + dictionary.elapsed_time + 's)') for dictionary in dictionaries" required=""
       div class="medium-6 columns"
         div class="row collapse"
           div class="small-10 columns"
